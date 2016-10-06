@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="css/main.css">
+		<script src="js/jquery-3.1.0.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<title>-Welcome</title>
+	</head>
+	<body class="chat-body">
+    <div class="content">
+      <section class="container app">
+        <div class="row">
+          <div class="col-md-4 contact">
+            <div class="row">
+              <div class="col-md-12 header">
+                  <span class="glyphicon glyphicon-user avatar avatar-user" aria-hidden="true"></span>
+                  <span class="glyphicon glyphicon-comment right icon-comment" aria-hidden="true"></span>
+              </div>
+              <div class="col-md-12 body-contact">
+								<form action="" class="search">
+									<input type="text" class="form-control" placeholder="Buscar o iniciar chat">
+								</form>
+								<div class="row contact-row">
+									<div class="col-md-2">
+										<span class="glyphicon glyphicon-user avatar avatar-contact" aria-hidden="true"></span>
+									</div>
+									<div class="col-md-8">
+										<div class="row">
+											<div class="col-md-12 contact-name">
+												<strong>Rorriizz Gold</strong>
+											</div>
+											<div class="col-md-12 contact-last-msj">
+												<p>Último mensaje...</p>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-2 contact-chat-time">
+										<small>12:46</small>
+									</div>
+								</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8 chat">
+          	<div class="row header chat-header">
+          		<div class="col-md-12 ">
+								<div class="row">
+									<div class="col-md-11">
+										<span class="glyphicon glyphicon-user avatar avatar-contact" aria-hidden="true"></span>
+										<strong>Rorriizz Gold</strong>
+									</div>
+									<div class="col-md-1 text-right chat-option">
+										<span class="glyphicon glyphicon-option-vertical option" aria-hidden="true"></span>
+									</div>
+								</div>
+          		</div>
+          	</div>
+						<div class="row chat-footer">
+							<div class="col-md-12">
+								<div class="row">
+									<div class="col-md-1 chat-icon">
+										<span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span>
+									</div>
+									<div class="col-md-10 chat-field">
+										<input id="txtMsg" type="text" class="form-control" placeholder="Escribe un mensaje">
+									</div>
+									<div class="col-md-1 chat-icon chat-send">
+										<a id="btnSendMsg" href="#"><span class="glyphicon glyphicon-send" aria-hidden="true"></span></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row chat-messages">
+							<div class="col-md-12">
+								<ul id="listMsg">
+									
+								</ul>
+
+							</div>
+						</div>
+          </div>
+        </div>
+  		</section>
+    </div>
+		<script>
+			$(document).ready(function(){
+
+				var clearTxtMsg = function(){
+					$('#txtMsg').val('');
+				}
+
+				var sendMsg = function(){
+					var list = $('#listMsg');
+					var msg = $('#txtMsg').val();
+					list.append('<li> <span>' + msg + '</li>')
+					clearTxtMsg();
+				}
+
+				$('#btnSendMsg').on('click', sendMsg);
+
+				$('#txtMsg').on('keypress', function(){
+					if(event.which == 13){
+						sendMsg();
+					}
+				});
+
+
+
+			});
+		</script>
+	</body>
+</html>
