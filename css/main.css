@@ -86,8 +86,8 @@ body{
    border: 1px solid #767676;
  }
  .avatar-contact{
-   background-color: #1abc9c;
-   border: 1px solid #1abc9c;
+   background-color: #1f4d94;
+   border: 1px solid #1f4d94;
    color: #ffffff;
  }
 .icon-comment{
@@ -156,16 +156,34 @@ body{
   border-width: 0;
 }
 ul#listMsg li{
-  list-style-type: none;
-  text-align: right;
-  font-weight: bold;
-  color: #8e765f;/*white;*/
-  padding-top: 5px;
-  padding-bottom: 5px;
+   list-style-type: none;
+   text-align: right;
+   padding-top: 5px;
+   padding-bottom: 5px
 }
 ul#listMsg li span{
-  background: #41dabc; /*#0d967b;*/
-  border-radius: 7px;  
+  background-color: #90EE90;
+  border-radius: 5px;
   display: inline-block;
-  padding: 5px;
+  padding: 6px 7px 8px 9px;
+  position: relative;
+}
+ul#listMsg li:nth-child(odd) span{
+  background-color: #FFFFFF;
+}
+ul#listMsg li span:before{
+  content: "";
+  width: 0;
+  position: absolute;
+  border-style: solid;
+  border-width: 5px 0 5px 11px;
+  border-color: transparent transparent transparent #90ee90;
+  right: -11px;
+  bottom: 3px;
+}
+/*
+ *Arrow
+ */
+ul#listMsg li:nth-child(odd) span:before{
+  border-color: transparent transparent transparent #FFFFFF;
 }

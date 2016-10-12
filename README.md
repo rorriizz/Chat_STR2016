@@ -1,2 +1,2 @@
-# rorriizz
-STR2016
+# ChatSocket
+Chat socketio
